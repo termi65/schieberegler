@@ -1,5 +1,7 @@
 
-export default Horizontal = (anzahl, min, max) => {
+import React, {useEffect, useState} from "react";
+
+const Horizontal = ({anzahl, min, max}) => {
     const [length, setLength] = useState(0);
     const [defaultString, setDefaultString] = useState('=');
 
@@ -19,13 +21,12 @@ export default Horizontal = (anzahl, min, max) => {
     }
 
     useEffect(() => {
-        if (id) ladeMitglied();
-        console.log(mitglied);
+        
         }, []);
 
     return (
         <>
-            <button type="button" 
+            {/* <button type="button" 
                 onClick={dec}
             >
                 -
@@ -39,7 +40,10 @@ export default Horizontal = (anzahl, min, max) => {
             onClick={inc}
             >
                 -
-            </button>
+            </button> */}
+            <p>==========</p>
         </>
     )
 }
+
+export default Horizontal;

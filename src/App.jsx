@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import Horizontal from './parts/horizontal'
+import Horizontal from './parts/Horizontal'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <div>
-        <Horizontal />
+        <Horizontal anzahl='3' min='1' max='10'/>
       </div>
     </>
   )
