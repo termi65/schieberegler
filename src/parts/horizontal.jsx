@@ -1,8 +1,8 @@
 
 import React, {useEffect, useState} from "react";
 
-const Horizontal = ({anzahl, min, max}) => {
-    const [length, setLength] = useState(0);
+export default function Horizontal({anzahl, min, max}) {
+    const [length, setLength] = useState(anzahl);
     const [defaultString, setDefaultString] = useState('=');
 
     const inc = () => {
@@ -14,36 +14,32 @@ const Horizontal = ({anzahl, min, max}) => {
 
     const dec = () => {
         if (defaultString.length > min) {
-            setDefaultString (defaultString.substring(0, length));
             setLength(length - 1);
+            setDefaultString (defaultString.substring(0, length));
         }
 
     }
 
     useEffect(() => {
-        
-        }, []);
+        if (length != anzahl) {
+            setDefaultString("=".repeat(anzahl));
+        }
+    }, []);
 
     return (
         <>
-            {/* <button type="button" 
+            <button type="button" 
                 onClick={dec}
             >
                 -
             </button>
-            <p>
-            while ({length < anzahl}) {
-                inc()
-            }
-           </p> 
+                {defaultString}
            <button type="button" 
             onClick={inc}
             >
-                -
-            </button> */}
-            <p>==========</p>
+                +
+            </button>
+
         </>
     )
 }
-
-export default Horizontal;
